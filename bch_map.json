@@ -1,0 +1,73 @@
+{
+    "metadata": {
+        "engine": "Gemini-Forensics-2026",
+        "start": "2026-02-22 00:23:59.200124"
+    },
+    "steps": [
+        {
+            "hop": 1,
+            "txid": "4bbdff0580c3166cbb62bb7f7b62a2dd5a2605601e7d8437955fe73c4fe59f7b",
+            "timestamp": "2025-07-22 10:24:48",
+            "sink": {
+                "address": "Unknown/OP_RETURN",
+                "value": 0
+            },
+            "router": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 0.00106478
+            }
+        },
+        {
+            "hop": 2,
+            "txid": "0c814e5675a9d5c476a3a87d8acf542f481325d71a41da1d46f55b20018feb69",
+            "timestamp": "2025-07-20 03:37:32",
+            "sink": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 1e-05
+            },
+            "router": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 0.00207538
+            }
+        },
+        {
+            "hop": 3,
+            "txid": "5c72080d42a6f79f4d77ebde7a351fd8987ccffeb1118a93f1e0e4945ca6e139",
+            "timestamp": "2025-07-20 03:37:32",
+            "sink": {
+                "address": "bitcoincash:qq7sg4c986yj3de85ay4ntgfc4z0mf0scqwzknqmym",
+                "value": 0.001448
+            },
+            "router": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 0.0021
+            }
+        },
+        {
+            "hop": 4,
+            "txid": "0c814e5675a9d5c476a3a87d8acf542f481325d71a41da1d46f55b20018feb69",
+            "timestamp": "2025-07-20 03:37:32",
+            "sink": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 1e-05
+            },
+            "router": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 0.00207538
+            }
+        },
+        {
+            "hop": 5,
+            "txid": "5c72080d42a6f79f4d77ebde7a351fd8987ccffeb1118a93f1e0e4945ca6e139",
+            "timestamp": "2025-07-20 03:37:32",
+            "sink": {
+                "address": "bitcoincash:qq7sg4c986yj3de85ay4ntgfc4z0mf0scqwzknqmym",
+                "value": 0.001448
+            },
+            "router": {
+                "address": "bitcoincash:qzcal78gqjncjdnhxet0j780d9dsq7l3rgz8muxc25",
+                "value": 0.0021
+            }
+        }
+    ]
+}

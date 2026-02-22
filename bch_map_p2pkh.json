@@ -1,0 +1,31 @@
+{
+    "metadata": {
+        "engine": "Gemini-Forensics-2026",
+        "start": "2026-02-22 00:23:12.660788"
+    },
+    "steps": [
+        {
+            "hop": 1,
+            "txid": "be7d285e48d13d5b8ec441949c222baa3e51056a78f8420ca25343cc0a2b40cc",
+            "timestamp": "2026-02-21 23:33:48",
+            "sink": {
+                "address": "Unknown/OP_RETURN",
+                "value": 0
+            },
+            "router": {
+                "address": "bitcoincash:qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p",
+                "value": 3.1256051
+            }
+        },
+        {
+            "hop": 2,
+            "txid": "6af40768c051edd6f69d65bb62f07344e6b8641a59377a66f419b438da06f934",
+            "timestamp": "2017-08-03 15:43:59",
+            "sink": {
+                "address": "bitcoincash:qrcuqadqrzp2uztjl9wn5sthepkg22majyxw4gmv6p",
+                "value": 12.62319477
+            },
+            "router": null
+        }
+    ]
+}
