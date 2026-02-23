@@ -60,6 +60,26 @@ Renders directed graphs showing:
 
 \<code snippet placeholder\>
 
+# Oracle Contract Architecture Overview (Simple + Scalable)
+
+Your oracle will work like this:
+
+```
+User → sends tx → Contract
+↳ OP_RETURN (text data)
+↳ Output back to same contract (state loop)
+```
+
+Why this design?
+
+| Feature           | How it's achieved             |
+|-------------------|-------------------------------|
+| Open submissions  | Anyone can spend contract     |
+| Permanent address | Covenant enforces same script |
+| Searchable data   | OP_RETURN output              |
+| Identity filter   | Pubkey in script input        |
+
+
 # 2. CashIntell  The Security Marketplace
 
 CashIntell is a decentralized marketplace where CashToken creators hire
@@ -79,7 +99,9 @@ Instead, funds move into a newly derived address with updated rules.
 
 **Vault progression model**
 
+```
 \<code snippet placeholder\>
+```
 
 ## Escrow Lifecycle
 
@@ -93,25 +115,33 @@ Contracts compiled with:
 
 - Terms metadata
 
+```
 \<code snippet placeholder\>
+```
 
 ### Action A  Update
 
 Both parties sign → funds move to a new vault with updated description.
 
+```
 \<code snippet placeholder\>
+```
 
 ### Action B  Release
 
 Successful audit → funds sent to seller wallet.
 
+```
 \<code snippet placeholder\>
+```
 
 ### Action C  Cancel
 
 Mutual agreement → funds returned to buyer.
 
+```
 \<code snippet placeholder\>
+```
 
 ## Data Retrieval & Hybrid Tracking
 
@@ -120,14 +150,18 @@ Mutual agreement → funds returned to buyer.
 Queries bytecode patterns so address changes do not break tracking
 continuity.
 
+```
 \<code snippet placeholder\>
+```
 
 ### Metadata Embedding
 
 Latest contract state is encoded directly in locking bytecode and
 visualized by CashTrace.
 
+```
 \<code snippet placeholder\>
+```
 
 # 3. Technology Stack
 
