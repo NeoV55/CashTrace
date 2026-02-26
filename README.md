@@ -1,4 +1,4 @@
-<p align="center"><img src="/cashtrace1.png" width="480"\></p>
+<p align="center"><img src="/cashtrace1.png" width="780"\></p>
 
 # CashTrace by CashIntell  
 ### The Definitive Forensic & Security Ecosystem for Bitcoin Cash
