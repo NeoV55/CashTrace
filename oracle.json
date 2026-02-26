@@ -1,0 +1,49 @@
+{
+  "contractName": "OpenOracle",
+  "constructorInputs": [],
+  "abi": [
+    {
+      "name": "submit",
+      "inputs": [
+        {
+          "name": "userPk",
+          "type": "pubkey"
+        },
+        {
+          "name": "userSig",
+          "type": "sig"
+        }
+      ]
+    }
+  ],
+  "bytecode": "OP_CHECKSIGVERIFY OP_0 OP_OUTPUTVALUE OP_INPUTINDEX OP_UTXOVALUE e803 OP_SUB OP_GREATERTHANOREQUAL OP_VERIFY OP_0 OP_OUTPUTBYTECODE OP_INPUTINDEX OP_UTXOBYTECODE OP_EQUALVERIFY OP_1 OP_OUTPUTBYTECODE OP_1 OP_SPLIT OP_DROP 6a OP_EQUAL",
+  "source": "pragma cashscript ^0.12.0;\r\n\r\ncontract OpenOracle() {\r\n    function submit(\r\n        pubkey userPk,\r\n        sig userSig\r\n    ) {\r\n        // 1. Authenticate the sender\r\n        require(checkSig(userSig, userPk));\r\n\r\n        // 2. Updated Sustainability Check\r\n        // We allow the output to be up to 1000 sats less than the input\r\n        // to cover the miner fee. This allows the contract to pay for itself.\r\n        require(tx.outputs[0].value >= tx.inputs[this.activeInputIndex].value - 1000);\r\n\r\n        // 3. Covenant: Identity Check\r\n        require(tx.outputs[0].lockingBytecode == tx.inputs[this.activeInputIndex].lockingBytecode);\r\n\r\n        // 4. Metadata: Data Entry (OP_RETURN)\r\n        bytes opReturnPrefix = tx.outputs[1].lockingBytecode.split(1)[0];\r\n        require(opReturnPrefix == 0x6a);\r\n    }\r\n}",
+  "debug": {
+    "bytecode": "ad00ccc0c602e80394a26900cdc0c78851cd517f75016a87",
+    "sourceMap": "9:8:9:43:1;14:27:14:28:0;:16::35:1;:49::70:0;:39::77:1;:80::84:0;:39:::1;:16;:8::86;17:27:17:28:0;:16::45:1;:59::80:0;:49::97:1;:8::99;20:42:20:43:0;:31::60:1;:67::68:0;:31::69:1;:::72;21:34:21:38:0;:8::40:1",
+    "logs": [],
+    "requires": [
+      {
+        "ip": 0,
+        "line": 9
+      },
+      {
+        "ip": 8,
+        "line": 14
+      },
+      {
+        "ip": 13,
+        "line": 17
+      },
+      {
+        "ip": 21,
+        "line": 21
+      }
+    ]
+  },
+  "compiler": {
+    "name": "cashc",
+    "version": "0.12.1"
+  },
+  "updatedAt": "2026-02-25T13:38:07.892Z"
+}

@@ -1,0 +1,23 @@
+pragma cashscript ^0.12.0;
+
+contract OpenOracle() {
+    function submit(
+        pubkey userPk,
+        sig userSig
+    ) {
+        // 1. Authenticate the sender
+        require(checkSig(userSig, userPk));
+
+        // 2. Updated Sustainability Check
+        // We allow the output to be up to 1000 sats less than the input
+        // to cover the miner fee. This allows the contract to pay for itself.
+        require(tx.outputs[0].value >= tx.inputs[this.activeInputIndex].value - 1000);
+
+        // 3. Covenant: Identity Check
+        require(tx.outputs[0].lockingBytecode == tx.inputs[this.activeInputIndex].lockingBytecode);
+
+        // 4. Metadata: Data Entry (OP_RETURN)
+        bytes opReturnPrefix = tx.outputs[1].lockingBytecode.split(1)[0];
+        require(opReturnPrefix == 0x6a);
+    }
+}
